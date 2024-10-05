@@ -14,7 +14,7 @@ class ProductoPolicy
     public function viewAny(User $user): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminA','GestorA']);
+        return $user->hasAnyRole(['Admin','AdminA','GestorA','Gerente']);
     }
 
     /**
@@ -23,7 +23,7 @@ class ProductoPolicy
     public function view(User $user, Producto $producto): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminA','GestorA']);
+        return $user->hasAnyRole(['Admin','AdminA','GestorA','Gerente']);
     }
 
     /**
@@ -32,7 +32,7 @@ class ProductoPolicy
     public function create(User $user): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminA','GestorA']);
+        return $user->hasAnyRole(['Admin','AdminA','GestorA','Gerente']);
     }
 
     /**
@@ -41,7 +41,7 @@ class ProductoPolicy
     public function update(User $user, Producto $producto): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminA','GestorA']);
+        return $user->hasAnyRole(['Admin','AdminA','GestorA','Gerente']);
      }
 
     /**
@@ -50,7 +50,7 @@ class ProductoPolicy
     public function delete(User $user, Producto $producto): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminA']);
+        return $user->hasAnyRole(['Admin','AdminA','Gerente']);
     }
 
     /**
@@ -59,7 +59,7 @@ class ProductoPolicy
     public function restore(User $user, Producto $producto): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminA','GestorA']);
+        return $user->hasAnyRole(['Admin','AdminA','GestorA','Gerente']);
     }
 
     /**
@@ -68,6 +68,6 @@ class ProductoPolicy
     public function forceDelete(User $user, Producto $producto): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminA']);
+        return $user->hasAnyRole(['Admin','AdminA','Gerente']);
     }
 }

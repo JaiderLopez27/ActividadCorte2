@@ -14,7 +14,7 @@ class ProveedorPolicy
     public function viewAny(User $user): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC','GestorC']);
+        return $user->hasRole(['Admin','AdminC','GestorC','Gerente']);
     }
 
     /**
@@ -23,7 +23,7 @@ class ProveedorPolicy
     public function view(User $user, Proveedor $proveedor): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC','GestorC']);    }
+        return $user->hasRole(['Admin','AdminC','GestorC','Gerente']);    }
 
     /**
      * Determine whether the user can create models.
@@ -31,7 +31,7 @@ class ProveedorPolicy
     public function create(User $user): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC','GestorC']);    }
+        return $user->hasRole(['Admin','AdminC','GestorC','Gerente']);    }
 
     /**
      * Determine whether the user can update the model.
@@ -39,7 +39,7 @@ class ProveedorPolicy
     public function update(User $user, Proveedor $proveedor): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC','GestorC']);    }
+        return $user->hasRole(['Admin','AdminC','GestorC','Gerente']);    }
 
     /**
      * Determine whether the user can delete the model.
@@ -47,7 +47,7 @@ class ProveedorPolicy
     public function delete(User $user, Proveedor $proveedor): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC']);    }
+        return $user->hasRole(['Admin','AdminC','Gerente']);    }
 
     /**
      * Determine whether the user can restore the model.
@@ -55,7 +55,7 @@ class ProveedorPolicy
     public function restore(User $user, Proveedor $proveedor): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC','GestorC']);    }
+        return $user->hasRole(['Admin','AdminC','GestorC','Gerente']);    }
 
     /**
      * Determine whether the user can permanently delete the model.
@@ -63,5 +63,5 @@ class ProveedorPolicy
     public function forceDelete(User $user, Proveedor $proveedor): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC']);    }
+        return $user->hasRole(['Admin','AdminC','Gerente']);    }
 }

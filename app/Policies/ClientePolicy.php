@@ -14,7 +14,7 @@ class ClientePolicy
     public function viewAny(User $user): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminV','GestorV']);
+        return $user->hasAnyRole(['Admin','AdminV','GestorV','Gerente']);
     }
 
     /**
@@ -23,7 +23,7 @@ class ClientePolicy
     public function view(User $user, Cliente $cliente): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminV','GestorV']);
+        return $user->hasAnyRole(['Admin','AdminV','GestorV','Gerente']);
     }
 
     /**
@@ -32,7 +32,7 @@ class ClientePolicy
     public function create(User $user): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminV','GestorV']);
+        return $user->hasAnyRole(['Admin','AdminV','GestorV','Gerente']);
     }
 
     /**
@@ -41,7 +41,7 @@ class ClientePolicy
     public function update(User $user, Cliente $cliente): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminV','GestorV']);
+        return $user->hasAnyRole(['Admin','AdminV','GestorV','Gerente']);
     }
 
     /**
@@ -50,7 +50,7 @@ class ClientePolicy
     public function delete(User $user, Cliente $cliente): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminV']);
+        return $user->hasAnyRole(['Admin','AdminV','Gerente']);
     }
 
     /**
@@ -59,7 +59,7 @@ class ClientePolicy
     public function restore(User $user, Cliente $cliente): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminV','GestorV']);
+        return $user->hasAnyRole(['Admin','AdminV','GestorV','Gerente']);
     }
 
     /**
@@ -68,6 +68,6 @@ class ClientePolicy
     public function forceDelete(User $user, Cliente $cliente): bool
     {
         //
-        return $user->hasAnyRole(['Admin','AdminV']);
+        return $user->hasAnyRole(['Admin','AdminV','Gerente']);
     }
 }

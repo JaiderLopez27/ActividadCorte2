@@ -14,7 +14,7 @@ class CompraPolicy
     public function viewAny(User $user): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC','GestorC']);
+        return $user->hasRole(['Admin','AdminC','GestorC','Gerente']);
     }
 
     /**
@@ -23,7 +23,7 @@ class CompraPolicy
     public function view(User $user, Compra $compra): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC','GestorC']);
+        return $user->hasRole(['Admin','AdminC','GestorC','Gerente']);
     }
 
     /**
@@ -32,7 +32,7 @@ class CompraPolicy
     public function create(User $user): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC','GestorC']);
+        return $user->hasRole(['Admin','AdminC','GestorC','Gerente']);
     }
 
     /**
@@ -41,7 +41,7 @@ class CompraPolicy
     public function update(User $user, Compra $compra): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC','GestorC']);
+        return $user->hasRole(['Admin','AdminC','GestorC','Gerente']);
     }
 
     /**
@@ -50,7 +50,7 @@ class CompraPolicy
     public function delete(User $user, Compra $compra): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC']);
+        return $user->hasRole(['Admin','AdminC','Gerente']);
     }
 
     /**
@@ -59,7 +59,7 @@ class CompraPolicy
     public function restore(User $user, Compra $compra): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC','GestorC']);
+        return $user->hasRole(['Admin','AdminC','GestorC','Gerente']);
     }
 
     /**
@@ -68,6 +68,6 @@ class CompraPolicy
     public function forceDelete(User $user, Compra $compra): bool
     {
         //
-        return $user->hasRole(['Admin','AdminC']);
+        return $user->hasRole(['Admin','AdminC','Gerente']);
     }
 }
